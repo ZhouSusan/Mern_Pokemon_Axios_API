@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 const Display = (props) => {
 
@@ -6,7 +7,7 @@ const Display = (props) => {
         <div>
         {
             props.pokemons.map((pokemon, i) => {
-                return <p key={i}>• {pokemon.name}</p>
+                return <p key={i} className={styles.list}>• {pokemon.name}</p>
             })
         }
         </div>
