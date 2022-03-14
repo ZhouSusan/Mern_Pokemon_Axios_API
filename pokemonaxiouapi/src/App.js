@@ -1,11 +1,16 @@
+import React, {useState} from 'react';
 import './App.css';
+import Display from './compononets/Display';
 import AxiosPokemon from './compononets/AxiosPokemon';
-import React from 'react';
+
 
 function App() {
+  const [pokemons, setPokemons] = useState([]);
+
   return (
     <div className="App">
-      <AxiosPokemon/>
+      <AxiosPokemon pokemons={pokemons} setPokemons={setPokemons}/>
+      <Display pokemons={pokemons}/>
     </div>
   );
 }

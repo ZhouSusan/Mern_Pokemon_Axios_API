@@ -3,7 +3,7 @@ import axios from 'axios';
 import styles from './styles.module.css';
 
 const AxiosPokemon = (props) => {
-    const [pokemons, setPokemons] = useState([]);
+    const {pokemons, setPokemons} = props;
 
     const getPokemon = (event) => {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=807')
@@ -14,11 +14,6 @@ const AxiosPokemon = (props) => {
     return (
         <div>
             <button onClick={getPokemon} className={styles.btn}>Fetch Pokemon</button>
-            {
-                pokemons.map((pokemon, i) => {
-                    return <p key={i}>• {pokemon.name}</p>
-                })
-            }
         </div>
     )
 }
